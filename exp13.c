@@ -1,14 +1,16 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void merge(int arr[], int low, int mid, int high)
 {
     int i, j, k;
-    int temp[100];
+    int *temp;
+    temp = (int *)malloc((high - low + 1) * sizeof(int));
 
     i = low;
     j = mid + 1;
-    k = low;
+    k = 0;
 
     while (i <= mid && j <= high)
     {
@@ -39,10 +41,11 @@ void merge(int arr[], int low, int mid, int high)
         k++;
     }
 
-    for (i = low; i <= high; i++)
+    for (i = low,k=0; i <= high; i++,k++)
     {
-        arr[i] = temp[i];
+        arr[i] = temp[k];
     }
+    free(temp);
 }
 
 void mergeSort(int arr[], int low, int high)
@@ -62,7 +65,7 @@ void mergeSort(int arr[], int low, int high)
 
 int main()
 {
-    int arr[100], n, i;
+    int *arr, n, i;
 
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -72,6 +75,7 @@ int main()
         printf("Invalid number of elements!");
         return 0;
     }
+     arr = (int *)malloc(n * sizeof(int));
 
     printf("Enter %d integers:\n", n);
 
