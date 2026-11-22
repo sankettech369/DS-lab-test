@@ -65,7 +65,7 @@ int main()
         scanf("%d",&item);
         root=insert(root,item);
     }
-    do{
+    while(1){
         printf("\nmenu\n");
         printf("1. in oreder\n");
         printf("2. pre oreder\n");
@@ -94,15 +94,13 @@ int main()
             break;
 
             case 4:
-            break;
+            exit(0);
 
             default:
             printf("invalid choice\n");
 
         }
-    }while(choice !=4);
-
-
-       
+    }
+  
     return 0;
 }
