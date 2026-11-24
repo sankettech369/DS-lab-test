@@ -65,42 +65,12 @@ int main()
         scanf("%d",&item);
         root=insert(root,item);
     }
-    while(1){
-        printf("\nmenu\n");
-        printf("1. in oreder\n");
-        printf("2. pre oreder\n");
-        printf("3. post oreder\n");
-        printf("4. exit\n");
-        printf("enter your choice; ");
-        scanf("%d",&choice);
-
-        switch(choice){
-            case 1:
-            printf("in order traversal:");
-            inorder(root);
-            printf("\n");
-            break;
-
-            case 2:
-            printf("Pre-order traversal: ");
-            preorder(root);
-            printf("\n");
-            break;
-
-            case 3:
-            printf("\nPost-order traversal: ");
-            postorder(root);
-            printf("\n");
-            break;
-
-            case 4:
-            exit(0);
-
-            default:
-            printf("invalid choice\n");
-
-        }
-    }
-  
+   printf("inorder traversal : ");
+   inorder(root);
+    printf("\npreorder traversal : ");
+    preorder(root);
+    printf("\npostorder traversal : ");
+    postorder(root);
+    
     return 0;
 }
